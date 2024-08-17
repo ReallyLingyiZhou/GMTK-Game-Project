@@ -16,8 +16,9 @@ public class MeshDestroy : MonoBehaviour
     private Plane edgePlane = new Plane();
 
     public int CutCascades = 1;
-    public float ExplodeForce = 0;
-    public float SpeedThreshold = 0;
+    public float ExplodeForce = 250;
+    public float ImpulseThreshold = 10;
+    public List<string> ImmunityTags = new List<string>() { "Player" };
 
     // Start is called before the first frame update
     void Start()
@@ -28,16 +29,13 @@ public class MeshDestroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            DestroyMesh();
-        }
+
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        var speed = collision.relativeVelocity.magnitude;
-        if (speed > SpeedThreshold)
+        var colliderTag = collision.gameObject.tag;
+        if (!ImmunityTags.Any(tag => tag == colliderTag) && collision.impulse.magnitude > ImpulseThreshold)
             DestroyMesh();
     }
 
