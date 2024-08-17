@@ -7,7 +7,12 @@ public class IKControlCharacter : MonoBehaviour
    protected Animator animator;
 
     public bool ikActive = false;
+    public float sensitivity = 0.1f;    
+    [HideInInspector]
     public Transform rightHandObj = null;
+    [HideInInspector]
+    public Transform leftHandObj = null;
+    [HideInInspector]
     public Transform lookObj = null;
 
     void Start ()
@@ -27,6 +32,8 @@ public class IKControlCharacter : MonoBehaviour
                 if(lookObj != null) {
                     animator.SetLookAtWeight(1);
                     animator.SetLookAtPosition(lookObj.position);
+                }else{
+                    lookObj = rightHandObj;
                 }
 
                 // Set the right hand target position and rotation, if one has been assigned
@@ -48,6 +55,45 @@ public class IKControlCharacter : MonoBehaviour
         }
     }
 
+    public void initiateTargetObject(Transform target){
+        if(ikActive){
+            return;
+        }
+        initiateLeftHandObject(target);
+        initiateRightHandObject(target);
+    }
+
+    public void initiateRightHandObject(Transform target){
+        if(rightHandObj != null){
+            rightHandObj = target;
+            initiateLookObject(target);
+        }
+    }
+
+    public void initiateLeftHandObject(Transform target){
+        if(leftHandObj != null){
+            leftHandObj = target;
+            initiateLookObject(target);
+        }
+    }
+
+    public void initiateLookObject(Transform target){
+        lookObj = target;
+    }
+
+    public void resetRightHandObject(){
+        rightHandObj = null;
+    }
+
+    public void resetLeftHandObject(){
+        leftHandObj = null;
+    }
+
+    public void resetLookObject(){
+        lookObj = null;
+    }
+
+
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
@@ -68,8 +114,8 @@ public class IKControlCharacter : MonoBehaviour
 
             // Calculate the new position of the look object
             Vector3 lookObjPosition = lookObj.position;
-            lookObjPosition += transform.right * mouseX;
-            lookObjPosition += transform.forward * mouseY;
+            lookObjPosition += transform.right * mouseX * sensitivity;
+            lookObjPosition += transform.forward * mouseY * sensitivity;
 
             // Set the new position of the look object
             lookObj.position = lookObjPosition;
