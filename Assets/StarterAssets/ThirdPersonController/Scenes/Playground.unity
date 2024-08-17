@@ -140,6 +140,10 @@ PrefabInstance:
       value: Box_100x100x100_Prefab (1)
       objectReference: {fileID: 0}
     - target: {fileID: 899428459418414007, guid: e5f4daf24146ee040b5a2d7a73b30aa0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 899428459418414007, guid: e5f4daf24146ee040b5a2d7a73b30aa0, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -639,6 +643,10 @@ PrefabInstance:
       value: Box_100x100x100_Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 899428459418414007, guid: e5f4daf24146ee040b5a2d7a73b30aa0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 899428459418414007, guid: e5f4daf24146ee040b5a2d7a73b30aa0, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -966,7 +974,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1618834095}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a617627f5e2044b1baa4bcdc70d3e6b6, type: 3}
   m_Name: 
@@ -1124,6 +1132,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b6c971025e34efa868262138ab8aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raiseHandAnimationTimeDuration: 2
+  animationPositionWeightMax: 1
+  animationRotationWeightMax: 0.5
+  rightHandCursor: {fileID: 2043943618}
   ikActive: 0
   sensitivity: 0.1
   rightHandObj: {fileID: 1618834096}

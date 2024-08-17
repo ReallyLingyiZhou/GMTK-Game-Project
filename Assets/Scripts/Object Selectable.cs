@@ -22,17 +22,17 @@ public class ObjectSelectable : MonoBehaviour
         }
     }
 
-    //when hovered by mouse
-    void OnMouseEnter()
-    {
-        GetComponent<Renderer>().material.color = hoverColor;
-        ikControlCharacter.initiateTargetObject(transform);
-    }
+    // //when hovered by mouse
+    // void OnMouseEnter()
+    // {
+    //     GetComponent<Renderer>().material.color = hoverColor;
+    //     ikControlCharacter.initiateTargetObject(transform);
+    // }
 
-    void OnMouseExit()
-    {
-        GetComponent<Renderer>().material.color = defaultColor;
-    }
+    // void OnMouseExit()
+    // {
+    //     GetComponent<Renderer>().material.color = defaultColor;
+    // }
 
 
 }
