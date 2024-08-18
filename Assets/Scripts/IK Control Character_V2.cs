@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class IKControlCharacter_V2 : MonoBehaviour
@@ -15,7 +16,7 @@ public class IKControlCharacter_V2 : MonoBehaviour
     public bool rightHandAnimation_Active = false;
     public bool rightHandGrabbing = false;
 
-    public float maxWeight_rightPosition = 1f; 
+    public float maxWeight_rightPosition = 1f;
     public float maxWeight_rightRotation = 1f;
     public float animationPositionWeight_right = 0;
     public float animationRotationWeight_right = 0;
@@ -53,6 +54,7 @@ public class IKControlCharacter_V2 : MonoBehaviour
         }
     }
 
+
     public IEnumerator RaiseHandAnimation()
     {
         rightHandAnimation_Active = true;
@@ -70,8 +72,8 @@ public class IKControlCharacter_V2 : MonoBehaviour
             yield return null;
         }
 
-        animationPositionWeight_right = 1;
-        animationRotationWeight_right = 1;
+        animationPositionWeight_right = maxWeight_rightPosition;
+        animationRotationWeight_right = maxWeight_rightRotation;
 
         rightHandGrabbing = true;
     }
@@ -102,10 +104,13 @@ public class IKControlCharacter_V2 : MonoBehaviour
         rightHandCursor.localPosition = Vector3.zero;
     }
 
+    private float armLength = 0f; 
+    public Transform rightShoulder, rightElbow, rightWrist;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        armLength = Vector3.Distance(rightShoulder.position, rightElbow.position) + Vector3.Distance(rightElbow.position, rightWrist.position);
     }
 
     // Update is called once per frame
@@ -125,13 +130,16 @@ public class IKControlCharacter_V2 : MonoBehaviour
             // Get the mouse movement along the X and Y axes
             float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y");
+            Vector3 offset = new Vector3(mouseX, 0, mouseY);
+            Vector3 cursorPosition = rightHandCursor.position;
 
-            Vector3 cursorPosition = rightHandCursor.localPosition;
-            cursorPosition += transform.right * mouseX * sensitivity;
-            cursorPosition += transform.forward * mouseY * sensitivity;
-            rightHandCursor.localPosition = cursorPosition; 
-        }
+            // Move the cursor
+            rightHandCursor.position = cursorPosition + offset * sensitivity;
+        };
     }
+
+
+
 
     void OnAnimatorIK()
     {
@@ -147,5 +155,18 @@ public class IKControlCharacter_V2 : MonoBehaviour
         animator.SetIKRotationWeight(AvatarIKGoal.RightHand, animationRotationWeight_right);
         animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandCursor.position);
         animator.SetIKRotation(AvatarIKGoal.RightHand, rightHandCursor.rotation);
+
+        if (rightHandGrabbing)
+        {
+            //get distance from cursor to shoulder
+            float distanceToShoulder = Vector3.Distance(rightHandCursor.position, rightShoulder.position);
+            if(distanceToShoulder > armLength)
+            {
+                Vector3 cursorToShoulder = rightShoulder.position - rightHandCursor.position;
+                cursorToShoulder.Normalize();
+                rightHandCursor.position = rightShoulder.position - cursorToShoulder * armLength;
+            }
+
+        }
     }
 }
