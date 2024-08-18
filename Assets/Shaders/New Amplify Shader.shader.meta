@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: b794dc66682420d4fbaa06b3add7a03a
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _Armature_Body_RGB: {fileID: 2800000, guid: a95378e0fd5828442a6ed903fb3b0bf7, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
