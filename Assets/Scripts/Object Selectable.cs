@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+/// <summary>
+/// require rigidbody and collider
+/// </summary>
+/// 
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
 public class ObjectSelectable : MonoBehaviour
 {
     //colors
@@ -12,12 +18,14 @@ public class ObjectSelectable : MonoBehaviour
 
     public bool isGrabbed = false; 
     public Transform cursor3D; 
+    public Cursor3D cursorScript;
     public Vector3 offset; 
        
     // Start is called before the first frame update
     void Start()
     {
         defaultColor = GetComponent<Renderer>().material.color;
+        cursorScript = cursor3D.GetComponent<Cursor3D>();
     }
 
     public void tool_hoverEnter(){
@@ -31,6 +39,9 @@ public class ObjectSelectable : MonoBehaviour
     public void tool_selected(){
         //disable collider
         GetComponent<Collider>().enabled = false;
+        //disable rigidbody
+        GetComponent<Rigidbody>().isKinematic = true;
+
         isGrabbed = true;
         offset = transform.position - cursor3D.position;
     }
@@ -41,6 +52,8 @@ public class ObjectSelectable : MonoBehaviour
         offset = Vector3.zero;
         //enable collider
         GetComponent<Collider>().enabled = true;
+        //enable rigidbody
+        GetComponent<Rigidbody>().isKinematic = false;
     }   
 
     // Update is called once per frame
