@@ -33,13 +33,26 @@ public class Cursor3D : MonoBehaviour
         //when ctrl is down
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            transform.position = new Vector3(transform.position.x, -crounchVerticleOffset, transform.position.z);
+            StartCoroutine(Crouch());
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        IEnumerator Crouch()
         {
-            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+            float elapsedTime = 0f;
+            Vector3 startPos = transform.position;
+            Vector3 endPos = new Vector3(transform.position.x, -crounchVerticleOffset, transform.position.z);
+            float duration = 0.5f; // Adjust the duration as needed
+
+            while (elapsedTime < duration)
+            {
+            transform.position = Vector3.Lerp(startPos, endPos, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+            }
+
+            transform.position = endPos;
         }
+
     }
 
     public void toggleObjectSelection()
