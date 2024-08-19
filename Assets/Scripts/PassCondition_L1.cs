@@ -15,10 +15,19 @@ public class PassCondition_L1 : MonoBehaviour
     public bool itemStay = false;
 
     public GameObject levelEndingUI;
+    public InGameHud inGameHud;
+    public TaskTracker taskTracker;
     
     // Start is called before the first frame update
     void Start()
     {
+        if(inGameHud == null){
+            inGameHud = GameObject.Find("InGameHud").GetComponent<InGameHud>();
+        }
+
+        if(taskTracker == null){
+            taskTracker = GameObject.Find("TaskTracker").GetComponent<TaskTracker>();
+        }
         
     }
 
@@ -54,9 +63,11 @@ public class PassCondition_L1 : MonoBehaviour
     }
 
     public void levelEndingScenee(){
-        levelEndingUI.SetActive(true);
-        //disable the character controller
-
+        inGameHud.showHud();
+        taskTracker.completeObjective(0);
+        taskTracker.completeObjective(1);
+        taskTracker.completeObjective(2);
+        taskTracker.completeObjective(3);
     }
 
     

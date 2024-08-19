@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TaskTracker : MonoBehaviour
 {
-    [SerializeField] private List<Objective> Objectives;
+    [SerializeField] private List<SpawnStrikethrough> strikethroughs;
     [SerializeField] private bool AllDone = false;
     [SerializeField] private int CompletedCount = 0;
     [SerializeField] private int DestroyedCount = 0;
@@ -16,19 +16,26 @@ public class TaskTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
-    public void Complete(GameObject gameObject)
-    {
-        CompletedCount++;
-        var matched = Objectives.Find(obj => obj.ObjectiveName == gameObject.name);
-        matched.TryDeactivate();
-    }
-    public void Destroy(GameObject gameObject)
-    {
-        int id = gameObject.GetInstanceID();
-        DestroyedCount++;
-        var matched = Objectives.Find(obj => obj.ObjectiveName == gameObject.name);
-        matched.TryDeactivate();
+    // public void Complete(GameObject gameObject)
+    // {
+    //     CompletedCount++;
+    //     var matched = Objectives.Find(obj => obj.ObjectiveName == gameObject.name);
+    //     matched.TryDeactivate();
+    // }
+
+    // public void Destroy(GameObject gameObject)
+    // {
+    //     int id = gameObject.GetInstanceID();
+    //     DestroyedCount++;
+    //     var matched = Objectives.Find(obj => obj.ObjectiveName == gameObject.name);
+    //     matched.TryDeactivate();
+    // }
+
+    public void completeObjective(int index){
+        strikethroughs[index].taskFinished = true;
+        strikethroughs[index].Spawn();
     }
 }

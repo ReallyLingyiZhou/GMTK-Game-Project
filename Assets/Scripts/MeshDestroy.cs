@@ -121,7 +121,7 @@ public class MeshDestroy : MonoBehaviour
         {
             try
             {
-                tracker.Destroy(gameObject);
+                // tracker.Destroy(gameObject);
             }
             finally
             {

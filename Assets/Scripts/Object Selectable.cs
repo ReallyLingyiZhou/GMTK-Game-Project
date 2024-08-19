@@ -25,7 +25,7 @@ public class ObjectSelectable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        defaultColor = GetComponent<Renderer>().material.color;
+        defaultColor = GetComponent<Renderer>().material.GetColor("_Color0");
         if(cursor3D == null){
             cursor3D = GameObject.Find("RightHandCursor").transform;
         }
@@ -37,11 +37,17 @@ public class ObjectSelectable : MonoBehaviour
     }
 
     public void tool_hoverEnter(){
+        
         GetComponent<Renderer>().material.color = hoverColor;
+        //in the shader it's called _Color0, change it to hoverColor
+        GetComponent<Renderer>().material.SetColor("_Color0", hoverColor);
+
     }
 
     public void tool_hoverExit(){
         GetComponent<Renderer>().material.color = defaultColor;
+        //in the shader it's called _Color0, change it to defaultColor
+        GetComponent<Renderer>().material.SetColor("_Color0", defaultColor);
     }
 
     public void tool_selected(){
