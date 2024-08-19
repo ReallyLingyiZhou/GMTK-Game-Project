@@ -109,6 +109,8 @@ public class IKControlCharacter_V2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set framerate to 60
+        Application.targetFrameRate = 60;
         animator = GetComponent<Animator>();
         armLength = Vector3.Distance(rightShoulder.position, rightElbow.position) + Vector3.Distance(rightElbow.position, rightWrist.position);
     }
@@ -119,10 +121,16 @@ public class IKControlCharacter_V2 : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             RightHandActive = true;
+            //disable mouse cursor
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
         else if (Input.GetMouseButtonUp(1))
         {
             RightHandActive = false;
+            //enable mouse cursor
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
         if (rightHandGrabbing)
@@ -135,7 +143,17 @@ public class IKControlCharacter_V2 : MonoBehaviour
 
             // Move the cursor
             rightHandCursor.position = cursorPosition + offset * sensitivity;
-        };
+            // set the rotation based on the vector from shoulder to wrist on the XZ plane
+            Vector3 shoulderToWrist = rightWrist.position - rightShoulder.position;
+            
+            rightHandCursor.rotation = Quaternion.LookRotation(shoulderToWrist);
+
+        }
+    }
+
+    //fixed update
+    private void FixedUpdate() {
+        
     }
 
 

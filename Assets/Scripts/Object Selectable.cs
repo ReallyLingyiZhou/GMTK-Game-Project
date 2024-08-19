@@ -19,12 +19,20 @@ public class ObjectSelectable : MonoBehaviour
     public bool isGrabbed = false; 
     public Transform cursor3D; 
     public Cursor3D cursorScript;
+    public Transform holdingPoint; 
     public Vector3 offset; 
        
     // Start is called before the first frame update
     void Start()
     {
         defaultColor = GetComponent<Renderer>().material.color;
+        if(cursor3D == null){
+            cursor3D = GameObject.Find("RightHandCursor").transform;
+        }
+
+        if(holdingPoint == null){
+            holdingPoint = GameObject.Find("Holding Point").transform;
+        }
         cursorScript = cursor3D.GetComponent<Cursor3D>();
     }
 
@@ -44,6 +52,7 @@ public class ObjectSelectable : MonoBehaviour
 
         isGrabbed = true;
         offset = transform.position - cursor3D.position;
+        this.transform.parent = holdingPoint;
     }
 
     public void tool_deselected(){
@@ -54,14 +63,19 @@ public class ObjectSelectable : MonoBehaviour
         GetComponent<Collider>().enabled = true;
         //enable rigidbody
         GetComponent<Rigidbody>().isKinematic = false;
+        this.transform.parent = null;
     }   
 
     // Update is called once per frame
     void Update()
     {
-        if(isGrabbed){
-            transform.position = cursor3D.position + offset;
-        }
+        // if(isGrabbed){
+        //     // transform.position = cursor3D.position + offset;
+            
+        //     //set the position of the object to the position of the cursor, but rotate the offset based on the rotation of the cursor
+        //     transform.position = cursor3D.position + cursor3D.rotation * offset;
+
+        // }
     }
 
 }
