@@ -6,11 +6,13 @@ public class Cursor3D : MonoBehaviour
 {
 
     public ObjectSelectable objectSelectable;
-    public Transform objectGrabbed; 
+    public Transform objectGrabbed;
+    public float crounchVerticleOffset = 0.5f;
+    public float originalZ;
     // Start is called before the first frame update
     void Start()
     {
-
+        originalZ = transform.position.z;
     }
 
     // Update is called once per frame
@@ -27,15 +29,29 @@ public class Cursor3D : MonoBehaviour
         {
             ungrabObject();
         }
+
+        //when ctrl is down
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            transform.position = new Vector3(transform.position.x, -crounchVerticleOffset, transform.position.z);
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftControl))
+        {
+            transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+        }
     }
 
-    public void toggleObjectSelection(){
+    public void toggleObjectSelection()
+    {
         Debug.Log("Toggle Object Selection");
-        if(objectGrabbed == null){
+        if (objectGrabbed == null)
+        {
             grabObject();
             Debug.Log("Grab Object");
         }
-        else{
+        else
+        {
             ungrabObject();
             Debug.Log("Ungrab Object");
         }
@@ -43,9 +59,9 @@ public class Cursor3D : MonoBehaviour
 
     public void grabObject()
     {
-        if(objectGrabbed != null)  return;
-    
-        if(objectSelectable != null)
+        if (objectGrabbed != null) return;
+
+        if (objectSelectable != null)
         {
             objectSelectable.tool_selected();
             objectGrabbed = objectSelectable.transform;
@@ -53,7 +69,7 @@ public class Cursor3D : MonoBehaviour
     }
     public void ungrabObject()
     {
-        if(objectGrabbed != null)
+        if (objectGrabbed != null)
         {
             objectGrabbed.GetComponent<ObjectSelectable>().tool_deselected();
             objectGrabbed = null;
@@ -73,7 +89,7 @@ public class Cursor3D : MonoBehaviour
     {
         if (other.gameObject.tag == "Interactable")
         {
-            hoverObject(other.gameObject.GetComponent<ObjectSelectable>());  
+            hoverObject(other.gameObject.GetComponent<ObjectSelectable>());
         }
     }
 
@@ -85,7 +101,7 @@ public class Cursor3D : MonoBehaviour
         }
     }
 
-    public void hoverObject(ObjectSelectable obj) 
+    public void hoverObject(ObjectSelectable obj)
     {
         if (objectSelectable != null)
         {
@@ -97,13 +113,13 @@ public class Cursor3D : MonoBehaviour
     }
     public void unhoverObject(ObjectSelectable obj)
     {
-        if(objectSelectable == obj)
+        if (objectSelectable == obj)
         {
             objectSelectable.tool_hoverExit();
             objectSelectable = null;
         }
     }
 
-    
+
 
 }
