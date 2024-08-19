@@ -87,6 +87,7 @@ public class Cursor3D : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Enter");
         if (other.gameObject.tag == "Interactable")
         {
             hoverObject(other.gameObject.GetComponent<ObjectSelectable>());
