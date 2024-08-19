@@ -9,6 +9,7 @@ public class Cursor3D : MonoBehaviour
     public Transform objectGrabbed;
     public float crounchVerticleOffset = 0.5f;
     public float originalZ;
+    public float reachDownSpeed = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +42,7 @@ public class Cursor3D : MonoBehaviour
             float elapsedTime = 0f;
             Vector3 startPos = transform.position;
             Vector3 endPos = new Vector3(transform.position.x, -crounchVerticleOffset, transform.position.z);
-            float duration = 0.5f; // Adjust the duration as needed
+            float duration = reachDownSpeed; // Adjust the duration as needed
 
             while (elapsedTime < duration)
             {
