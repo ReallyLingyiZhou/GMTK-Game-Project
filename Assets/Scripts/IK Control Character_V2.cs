@@ -109,6 +109,8 @@ public class IKControlCharacter_V2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set framerate to 60
+        Application.targetFrameRate = 60;
         animator = GetComponent<Animator>();
         armLength = Vector3.Distance(rightShoulder.position, rightElbow.position) + Vector3.Distance(rightElbow.position, rightWrist.position);
     }
