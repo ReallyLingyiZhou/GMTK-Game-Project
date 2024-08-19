@@ -1,38 +1,67 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+/// <summary>
+/// require rigidbody and collider
+/// </summary>
+/// 
 
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Collider))]
 public class ObjectSelectable : MonoBehaviour
 {
     //colors
     public Color hoverColor = Color.green;
     public Color selectedColor = Color.red;
     private Color defaultColor;
-    public IKControlCharacter ikControlCharacter;
 
-    public Transform lookAtRoot; 
+    public bool isGrabbed = false; 
+    public Transform cursor3D; 
+    public Cursor3D cursorScript;
+    public Vector3 offset; 
        
     // Start is called before the first frame update
     void Start()
     {
         defaultColor = GetComponent<Renderer>().material.color;
-        if (ikControlCharacter == null)
-        {
-            // ikControlCharacter = FindObjectOfType<IKControlCharacter>();
-        }
+        cursorScript = cursor3D.GetComponent<Cursor3D>();
     }
 
-    //when hovered by mouse
-    void OnMouseEnter()
-    {
+    public void tool_hoverEnter(){
         GetComponent<Renderer>().material.color = hoverColor;
-        ikControlCharacter.initiateTargetObject(transform);
     }
 
-    void OnMouseExit()
-    {
+    public void tool_hoverExit(){
         GetComponent<Renderer>().material.color = defaultColor;
     }
 
+    public void tool_selected(){
+        //disable collider
+        GetComponent<Collider>().enabled = false;
+        //disable rigidbody
+        GetComponent<Rigidbody>().isKinematic = true;
+
+        isGrabbed = true;
+        offset = transform.position - cursor3D.position;
+    }
+
+    public void tool_deselected(){
+
+        isGrabbed = false;
+        offset = Vector3.zero;
+        //enable collider
+        GetComponent<Collider>().enabled = true;
+        //enable rigidbody
+        GetComponent<Rigidbody>().isKinematic = false;
+    }   
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(isGrabbed){
+            transform.position = cursor3D.position + offset;
+        }
+    }
 
 }

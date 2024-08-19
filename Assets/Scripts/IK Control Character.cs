@@ -4,7 +4,85 @@ using UnityEngine;
 
 public class IKControlCharacter : MonoBehaviour
 {
-   protected Animator animator;
+    protected Animator animator;
+
+    public float raiseHandAnimationTimeDuration = 0.2f;
+    public float animationPositionWeightMax = 1f;
+    public float animationRotationWeightMax = 0.5f;
+
+    private float animationPositionWeight_right = 0f; 
+    private float animationRotationWeight_right = 0f; 
+
+    public Transform rightHandCursor; 
+
+
+    private bool rightHandActive = false; 
+    public bool IKActive_Right = false; 
+    private Coroutine rightHandCoroutine;
+    public bool RightHandActive{
+        get{
+
+            return rightHandActive;
+        }
+        set{
+
+            rightHandActive = value;
+            if(rightHandActive){
+                if(rightHandCoroutine != null){
+                    StopCoroutine(rightHandCoroutine);      
+                }
+                
+                rightHandCoroutine = StartCoroutine(RaiseRightHand());
+
+                
+            }else{
+                if(rightHandCoroutine != null){
+                    StopCoroutine(rightHandCoroutine);
+                }
+                rightHandCoroutine = StartCoroutine(LowerRightHand());
+            }
+        }
+    }
+
+    private IEnumerator RaiseRightHand(){
+        IKActive_Right = true;
+        float progressPercentage = 0f;
+        float startTime = Time.time;
+
+        float startWeightRotation = animationRotationWeight_right;
+        float startWeightPosition = animationPositionWeight_right;
+        while(Time.time - startTime < raiseHandAnimationTimeDuration){
+            progressPercentage = (Time.time - startTime) / raiseHandAnimationTimeDuration;
+            animationPositionWeight_right = Mathf.Lerp(startWeightPosition,animationPositionWeightMax,progressPercentage);
+            animationRotationWeight_right = Mathf.Lerp(startWeightRotation,animationRotationWeightMax,progressPercentage);
+            yield return null;
+        }
+
+        IKActive_Right = false;
+    }
+
+    private IEnumerator LowerRightHand(){
+        IKActive_Right = true;
+        float progressPercentage = 0f;
+        float startTime = Time.time;
+        Vector3 cursorStartPosition = rightHandCursor.localPosition;
+        float startWeightRotation = animationRotationWeight_right;
+        float startWeightPosition = animationPositionWeight_right;
+        while(Time.time - startTime < raiseHandAnimationTimeDuration){
+            progressPercentage = (Time.time - startTime) / raiseHandAnimationTimeDuration;
+            animationPositionWeight_right = Mathf.Lerp(startWeightPosition,0f,progressPercentage);
+            animationRotationWeight_right = Mathf.Lerp(startWeightRotation,0f,progressPercentage);
+            rightHandCursor.localPosition = Vector3.Lerp(cursorStartPosition,Vector3.zero,progressPercentage);
+            yield return null;
+        }
+
+        IKActive_Right = false;
+
+    }
+    
+    public void resetRightHandCursor(){
+        rightHandCursor.localPosition = Vector3.zero;
+    }
 
     public bool ikActive = false;
     public float sensitivity = 0.1f;    
@@ -24,73 +102,46 @@ public class IKControlCharacter : MonoBehaviour
     void OnAnimatorIK()
     {
         if(animator) {
+            if(IKActive_Right){
+                IKRightHand();
+            }
+
 
             //if the IK is active, set the position and rotation directly to the goal.
-            if(ikActive) {
+            // if(RightHandActive) {
 
-                // Set the look target position, if one has been assigned
-                if(lookObj != null) {
-                    animator.SetLookAtWeight(1);
-                    animator.SetLookAtPosition(lookObj.position);
-                }else{
-                    lookObj = rightHandObj;
-                }
+            //     // Set the look target position, if one has been assigned
+            //     if(lookObj != null) {
+            //         animator.SetLookAtWeight(1);
+            //         animator.SetLookAtPosition(lookObj.position);
+            //     }else{
+            //         lookObj = rightHandCursor;
+            //     }
 
-                // Set the right hand target position and rotation, if one has been assigned
-                if(rightHandObj != null) {
-                    animator.SetIKPositionWeight(AvatarIKGoal.RightHand,1);
-                    animator.SetIKRotationWeight(AvatarIKGoal.RightHand,0.5f);  
-                    animator.SetIKPosition(AvatarIKGoal.RightHand,rightHandObj.position);
-                    animator.SetIKRotation(AvatarIKGoal.RightHand,rightHandObj.rotation);
-                }
+            //     // Set the right hand target position and rotation, if one has been assigned
+            //     if(rightHandObj != null) {
+            //       IKRightHand(); 
+            //     }
 
-            }
+            // }
 
-            //if the IK is not active, set the position and rotation of the hand and head back to the original position
-            else {          
-                animator.SetIKPositionWeight(AvatarIKGoal.RightHand,0);
-                animator.SetIKRotationWeight(AvatarIKGoal.RightHand,0);
-                animator.SetLookAtWeight(0);
-            }
+            // //if the IK is not active, set the position and rotation of the hand and head back to the original position
+            // else {          
+            //     Debug.Log(animationPositionWeight_right);
+            //     animator.SetIKPositionWeight(AvatarIKGoal.RightHand,animationPositionWeight_right);
+            //     animator.SetIKRotationWeight(AvatarIKGoal.RightHand,animationRotationWeight_right);
+            //     animator.SetIKPosition(AvatarIKGoal.RightHand,rightHandCursor.position);
+            //     animator.SetIKRotation(AvatarIKGoal.RightHand,rightHandCursor.rotation);
+            //     animator.SetLookAtWeight(animationRotationWeight_right);
+            // }
         }
     }
 
-    public void initiateTargetObject(Transform target){
-        if(ikActive){
-            return;
-        }
-        initiateLeftHandObject(target);
-        initiateRightHandObject(target);
-    }
-
-    public void initiateRightHandObject(Transform target){
-        if(rightHandObj != null){
-            rightHandObj = target;
-            initiateLookObject(target);
-        }
-    }
-
-    public void initiateLeftHandObject(Transform target){
-        if(leftHandObj != null){
-            leftHandObj = target;
-            initiateLookObject(target);
-        }
-    }
-
-    public void initiateLookObject(Transform target){
-        lookObj = target;
-    }
-
-    public void resetRightHandObject(){
-        rightHandObj = null;
-    }
-
-    public void resetLeftHandObject(){
-        leftHandObj = null;
-    }
-
-    public void resetLookObject(){
-        lookObj = null;
+    public void IKRightHand(){
+        animator.SetIKPositionWeight(AvatarIKGoal.RightHand,animationPositionWeight_right);
+        animator.SetIKRotationWeight(AvatarIKGoal.RightHand,animationRotationWeight_right);  
+        animator.SetIKPosition(AvatarIKGoal.RightHand,rightHandCursor.position);
+        animator.SetIKRotation(AvatarIKGoal.RightHand,rightHandCursor.rotation);
     }
 
 
@@ -98,28 +149,28 @@ public class IKControlCharacter : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            ikActive = true;
+            RightHandActive = true;
         }
         else if (Input.GetMouseButtonUp(1))
         {
-            ikActive = false;
+            RightHandActive = false;
         }
 
-
-        if (ikActive)
+        if (RightHandActive)
         {
             // Get the mouse movement along the X and Y axes
             float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y");
 
             // Calculate the new position of the look object
-            Vector3 lookObjPosition = lookObj.position;
+            Vector3 lookObjPosition = rightHandCursor.position;
             lookObjPosition += transform.right * mouseX * sensitivity;
             lookObjPosition += transform.forward * mouseY * sensitivity;
 
             // Set the new position of the look object
-            lookObj.position = lookObjPosition;
+            rightHandCursor.position = lookObjPosition;
         }
-        
     }
+
+    
 }
