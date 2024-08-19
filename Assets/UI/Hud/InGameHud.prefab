@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7223bb5e1e62fec4f8a82b2507e5f817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Objectives:
+  - {fileID: 5376922847097938947}
   AllDone: 0
   CompletedCount: 0
   DestroyedCount: 0
@@ -386,6 +388,7 @@ GameObject:
   - component: {fileID: 8120057982588075145}
   - component: {fileID: 3066456341863497922}
   - component: {fileID: 2389242039167546017}
+  - component: {fileID: 5376922847097938947}
   m_Layer: 5
   m_Name: BaseTask
   m_TagString: Untagged
@@ -531,6 +534,23 @@ MonoBehaviour:
   MinZRotation: -4.5
   Color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
   RandomFlips: 1
+--- !u!114 &5376922847097938947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6214899805937540317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe76dfe3f434e04d9d34d2338fcb747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: 
+  ObjectiveName: Bob
+  IsActive: 1
+  textMeshPro: {fileID: 0}
+  spawnStrikethrough: {fileID: 0}
 --- !u!1 &6815128327279386449
 GameObject:
   m_ObjectHideFlags: 0

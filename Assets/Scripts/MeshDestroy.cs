@@ -109,14 +109,26 @@ public class MeshDestroy : MonoBehaviour
             subParts.Clear();
         }
 
-        for (var i = 0; i < parts.Count; i++)
+        try
         {
-            parts[i].MakeGameobject(this);
-            parts[i].GameObject.GetComponent<Rigidbody>().AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
+            for (var i = 0; i < parts.Count; i++)
+            {
+                parts[i].MakeGameobject(this);
+                parts[i].GameObject.GetComponent<Rigidbody>().AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
+            }
+        }
+        finally
+        {
+            try
+            {
+                tracker.Destroy(gameObject);
+            }
+            finally
+            {
+                Destroy(gameObject);
+            }
         }
 
-        tracker.Destroy(gameObject);
-        Destroy(gameObject);
     }
 
     private PartMesh GenerateMesh(PartMesh original, Plane plane, bool left)

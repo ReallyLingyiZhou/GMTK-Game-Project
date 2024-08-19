@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Palmmedia.ReportGenerator.Core.Logging;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,13 +17,17 @@ public class SpawnStrikethrough : MonoBehaviour
     public bool RandomFlips = true;
     void Start()
     {
+        // Spawn();
+    }
+    public void Spawn()
+    {
         var ImageIn = Strikethroughs[Random.Range(0, Strikethroughs.Count)];
         var image = Duplicate(ImageIn);
         var curWidth = image.rectTransform.rect.size.x;
         var curScale = image.transform.localScale;
         var preferredWidth = textMeshPro.preferredWidth;
         image.transform.localScale = new Vector3((RandomFlips ? -1 : 1) * curScale.x * preferredWidth / curWidth, curScale.y, curScale.x);
-        image.transform.localPosition = new Vector3(preferredWidth / 2, 0, 0);
+        image.transform.localPosition = new Vector3(preferredWidth / 2 - curWidth, 0, 0);
 
         var curRotation = image.transform.localRotation;
         image.transform.localRotation = Quaternion.Euler(0, 0, curRotation.z + Random.Range(MinZRotation, MaxZRotation));
@@ -31,6 +36,7 @@ public class SpawnStrikethrough : MonoBehaviour
 
     private Image Duplicate(Image ImageIn)
     {
+        Debug.Log(textMeshPro.transform);
         var image = Instantiate(ImageIn, textMeshPro.transform);
         image.SetNativeSize();
         return image;
