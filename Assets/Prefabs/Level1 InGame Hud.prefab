@@ -100,7 +100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Deliver mail to the office
+  m_text: Press M to Minimize the Note
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da1c5de26e499dd409768a8c48bdcac0, type: 2}
   m_sharedMaterial: {fileID: 9078879384966033754, guid: da1c5de26e499dd409768a8c48bdcac0, type: 2}
@@ -791,11 +791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2389242039167546017, guid: b762a418e7997364d855b5a2c048101b, type: 3}
       propertyPath: taskFinished
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3066456341863497922, guid: b762a418e7997364d855b5a2c048101b, type: 3}
       propertyPath: m_text
-      value: Deliver mail to the office
+      value: Click on the task to cross out task
       objectReference: {fileID: 0}
     - target: {fileID: 3066456341863497922, guid: b762a418e7997364d855b5a2c048101b, type: 3}
       propertyPath: m_margin.z
@@ -941,6 +941,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.0000305
       objectReference: {fileID: 0}
+    - target: {fileID: 6146382593648491166, guid: b762a418e7997364d855b5a2c048101b, type: 3}
+      propertyPath: taskM
+      value: 
+      objectReference: {fileID: 3672956265736594685}
     - target: {fileID: 7675528254161727039, guid: b762a418e7997364d855b5a2c048101b, type: 3}
       propertyPath: m_IsActive
       value: 0
