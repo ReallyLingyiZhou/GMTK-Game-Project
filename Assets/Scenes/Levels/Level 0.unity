@@ -1273,6 +1273,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3122355814983578617, guid: f4f5acaf344d5a54eb7ee47224cb8c6d, type: 3}
+      propertyPath: taskFinished
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3557188914167823054, guid: f4f5acaf344d5a54eb7ee47224cb8c6d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1320,6 +1324,10 @@ PrefabInstance:
     - target: {fileID: 3600733914718302769, guid: f4f5acaf344d5a54eb7ee47224cb8c6d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3672956265736594685, guid: f4f5acaf344d5a54eb7ee47224cb8c6d, type: 3}
+      propertyPath: taskFinished
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6699938957098888218, guid: f4f5acaf344d5a54eb7ee47224cb8c6d, type: 3}
       propertyPath: strikethroughs.Array.size
@@ -1364,6 +1372,14 @@ PrefabInstance:
     - target: {fileID: 8384387994326547954, guid: f4f5acaf344d5a54eb7ee47224cb8c6d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928747806481004336, guid: f4f5acaf344d5a54eb7ee47224cb8c6d, type: 3}
+      propertyPath: taskFinished
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178250454513516799, guid: f4f5acaf344d5a54eb7ee47224cb8c6d, type: 3}
+      propertyPath: taskFinished
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
