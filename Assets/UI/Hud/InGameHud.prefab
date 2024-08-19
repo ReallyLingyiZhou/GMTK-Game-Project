@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 3066456341863497922}
   - component: {fileID: 2389242039167546017}
   m_Layer: 5
-  m_Name: ExampleTask
+  m_Name: BaseTask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

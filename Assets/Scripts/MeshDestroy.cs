@@ -19,6 +19,7 @@ public class MeshDestroy : MonoBehaviour
     public float ExplodeForce = 250;
     public float ImpulseThreshold = 10;
     public List<string> ImmunityTags = new List<string>() { "Player" };
+    [SerializeField] TaskTracker tracker;
 
     // Start is called before the first frame update
     void Start()
@@ -114,6 +115,7 @@ public class MeshDestroy : MonoBehaviour
             parts[i].GameObject.GetComponent<Rigidbody>().AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
         }
 
+        tracker.Destroy(gameObject);
         Destroy(gameObject);
     }
 
