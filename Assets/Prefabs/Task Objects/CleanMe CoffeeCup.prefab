@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 65a2168877dc69e4b9e494d118001f8b, type: 2}
+      objectReference: {fileID: 2100000, guid: d2682ed523bbf3f42af89209a879e100, type: 2}
     - target: {fileID: 919132149155446097, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
       propertyPath: m_Name
       value: CleanMe CoffeeCup
@@ -93,6 +93,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1182229670695979059}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5587037174142307749}
   m_SourcePrefab: {fileID: 100100000, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
 --- !u!1 &4197242617193429227 stripped
 GameObject:
@@ -113,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CutCascades: 1
   ExplodeForce: 250
-  ImpulseThreshold: 10
+  ImpulseThreshold: 3
   ImmunityTags:
   - Player
   tracker: {fileID: 0}
@@ -166,3 +169,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8849579028689351621, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
+--- !u!114 &5587037174142307749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4197242617193429227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a617627f5e2044b1baa4bcdc70d3e6b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 0, g: 1, b: 0, a: 1}
+  selectedColor: {r: 1, g: 0, b: 0, a: 1}
+  isGrabbed: 0
+  cursor3D: {fileID: 0}
+  cursorScript: {fileID: 0}
+  holdingPoint: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
