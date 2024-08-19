@@ -19,7 +19,7 @@ public class MeshDestroy : MonoBehaviour
     public float ExplodeForce = 250;
     public float ImpulseThreshold = 10;
     public List<string> ImmunityTags = new List<string>() { "Player" };
-    [SerializeField] TaskTracker tracker;
+    [SerializeField] TaskTracker? tracker;
 
     // Start is called before the first frame update
     void Start()
@@ -109,14 +109,25 @@ public class MeshDestroy : MonoBehaviour
             subParts.Clear();
         }
 
-        for (var i = 0; i < parts.Count; i++)
+        try
         {
-            parts[i].MakeGameobject(this);
-            parts[i].GameObject.GetComponent<Rigidbody>().AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
+            for (var i = 0; i < parts.Count; i++)
+            {
+                parts[i].MakeGameobject(this);
+                parts[i].GameObject.GetComponent<Rigidbody>().AddForceAtPosition(parts[i].Bounds.center * ExplodeForce, transform.position);
+            }
         }
-
-        tracker.Destroy(gameObject);
-        Destroy(gameObject);
+        finally
+        {
+            try
+            {
+                tracker?.Destroy(gameObject);
+            }
+            finally
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     private PartMesh GenerateMesh(PartMesh original, Plane plane, bool left)

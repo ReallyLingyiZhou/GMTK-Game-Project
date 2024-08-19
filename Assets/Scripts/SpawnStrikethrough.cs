@@ -14,7 +14,7 @@ public class SpawnStrikethrough : MonoBehaviour
     public float MinZRotation = -10;
     public Color Color = new Color(100, 100, 100, 255);
     public bool RandomFlips = true;
-    void Start()
+    public void Spawn()
     {
         var ImageIn = Strikethroughs[Random.Range(0, Strikethroughs.Count)];
         var image = Duplicate(ImageIn);

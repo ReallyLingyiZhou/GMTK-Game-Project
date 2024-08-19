@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TaskTracker : MonoBehaviour
@@ -22,13 +23,13 @@ public class TaskTracker : MonoBehaviour
     {
         CompletedCount++;
         var matched = Objectives.Find(obj => obj.ObjectiveName == gameObject.name);
-        matched.IsActive = false;
+        matched.TryDeactivate();
     }
     public void Destroy(GameObject gameObject)
     {
-        int id = gameObject.GetInstanceID();
         DestroyedCount++;
         var matched = Objectives.Find(obj => obj.ObjectiveName == gameObject.name);
-        matched.IsActive = false;
+        // var matched = Objectives.First();
+        matched.TryDeactivate();
     }
 }

@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1029176735116105934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6907837956377384566}
+  - component: {fileID: 8045446346338154625}
+  m_Layer: 0
+  m_Name: TaskTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6907837956377384566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029176735116105934}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 407.39954, y: 553.84607, z: -12.555116}
+  m_LocalScale: {x: 1.0282776, y: 1.0282776, z: 1.0282776}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4996088639674816289}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8045446346338154625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029176735116105934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7223bb5e1e62fec4f8a82b2507e5f817, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objectives:
+  - {fileID: 5565866768217324888}
+  AllDone: 0
+  CompletedCount: 0
+  DestroyedCount: 0
 --- !u!1 &1135837091270683535
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +388,7 @@ GameObject:
   - component: {fileID: 8120057982588075145}
   - component: {fileID: 3066456341863497922}
   - component: {fileID: 2389242039167546017}
+  - component: {fileID: 5565866768217324888}
   m_Layer: 5
   m_Name: BaseTask
   m_TagString: Untagged
@@ -484,6 +534,23 @@ MonoBehaviour:
   MinZRotation: -4.5
   Color: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
   RandomFlips: 1
+--- !u!114 &5565866768217324888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6214899805937540317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe76dfe3f434e04d9d34d2338fcb747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Description: 
+  ObjectiveName: CrackATask
+  IsActive: 1
+  textMeshPro: {fileID: 3066456341863497922}
+  spawnStrikethrough: {fileID: 2389242039167546017}
 --- !u!1 &6815128327279386449
 GameObject:
   m_ObjectHideFlags: 0
@@ -629,6 +696,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6907837956377384566}
   - {fileID: 5400239355887778064}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
