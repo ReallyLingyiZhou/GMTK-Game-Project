@@ -25,4 +25,10 @@ public class FinishPoint : MonoBehaviour
             PlayerPrefs.Save();
         }
     }
+
+    public void tool_goToNextLevel()
+    {
+        SceneManager.LoadSceneAsync(0);
+        UnlockNewLevel();
+    }
 }
