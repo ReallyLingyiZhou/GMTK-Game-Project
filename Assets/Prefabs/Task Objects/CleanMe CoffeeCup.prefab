@@ -127,7 +127,12 @@ MonoBehaviour:
   ImmunityTags:
   - Player
   tracker: {fileID: 0}
-  destructionSounds: []
+  destructionSounds:
+  - {fileID: 8300000, guid: 8e89b151f323d2e4291587b31f38c300, type: 3}
+  - {fileID: 8300000, guid: 8c298e8479a462f4ea5070a5cba276e1, type: 3}
+  - {fileID: 8300000, guid: 76aa703bb2b6adf4386ef7006096de1a, type: 3}
+  - {fileID: 8300000, guid: ec2817b349a23584aa2ee229072396b9, type: 3}
+  - {fileID: 8300000, guid: 8d8597aac2beff04690025671614936a, type: 3}
 --- !u!54 &7871996437920285194
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -208,13 +213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66704ccdeef4304429d681e9d109978b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPlaced: 0
-  itemDropped: 0
-  itemStay: 0
+  passCondition_Destroy: 1
+  taskIndex: 4
   levelEndingUI: {fileID: 0}
   inGameHud: {fileID: 0}
   taskTracker: {fileID: 0}
-  passCondition_Destroy: 1
-  taskIndex: 4
   goalName: Task TrashBin
   goalBaseName: Goal Base
