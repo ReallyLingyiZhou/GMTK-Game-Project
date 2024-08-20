@@ -10,7 +10,7 @@ public class EndMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject endMenuUi;
     public TaskSummery TaskSummery = new TaskSummery();
-    [Range(.1f, int.MaxValue)]
+    [Range(.1f, 300f)]
     public float ParLevelTime = 180;
     public void OpenEndMenu(TaskSummery taskSummery)
     {
