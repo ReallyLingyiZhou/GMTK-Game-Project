@@ -21,9 +21,9 @@ public class EndMenu : MonoBehaviour
     }
 
     public int GetTotalObjectives() =>
-        TaskSummery.ObjectivesCompletedCount + TaskSummery.ObjectivesCompletedCount;
+        TaskSummery.TotalObjectives;
     public float GetBreakagePercentage() =>
-        (GetTotalObjectives() + 1) / (TaskSummery.ObjectivesCompletedCount + TaskSummery.DestroyedCount + 1);
+        (TaskSummery.ObjectivesDestroyedCount + .05f) / (TaskSummery.TotalObjectives + .05f);
     public float GetScorePercentage() => (
             ((ParLevelTime + .1f - Math.Min(ParLevelTime, TaskSummery.time)) / ParLevelTime) +
             (1.0f / GetBreakagePercentage()) +

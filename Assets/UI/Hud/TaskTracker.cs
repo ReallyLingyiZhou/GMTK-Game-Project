@@ -11,7 +11,8 @@ public class TaskTracker : MonoBehaviour
         {
             time = Time.timeSinceLevelLoad,
             ObjectivesCompletedCount = CompletedCount,
-            ObjectivesDestroyedCount = strikethroughs.Count() - CompletedCount,
+            ObjectivesDestroyedCount = DestroyedCount,//strikethroughcount-completedcount
+            TotalObjectives = strikethroughs.Count(),
             DestroyedCount = DestroyedCount
         };
     }
@@ -43,9 +44,17 @@ public class TaskTracker : MonoBehaviour
     //     var matched = Objectives.Find(obj => obj.ObjectiveName == gameObject.name);
     //     matched.TryDeactivate();
     // }
-
-    public void completeObjective(int index)
+    public void MarkDestroyed()
     {
+        DestroyedCount++;
+    }
+
+    public void completeObjective(int index, bool succeed = true)
+    {
+        if (succeed)
+            CompletedCount++;
+        else
+            DestroyedCount++;
         strikethroughs[index].taskFinished = true;
         strikethroughs[index].Spawn();
     }
