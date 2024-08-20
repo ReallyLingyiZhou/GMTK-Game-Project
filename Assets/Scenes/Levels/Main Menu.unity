@@ -287,6 +287,7 @@ GameObject:
   - component: {fileID: 66156133}
   - component: {fileID: 66156135}
   - component: {fileID: 66156134}
+  - component: {fileID: 66156136}
   m_Layer: 5
   m_Name: Unavailable
   m_TagString: Untagged
@@ -412,6 +413,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66156132}
   m_CullTransparentMesh: 1
+--- !u!114 &66156136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66156132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374edd11c9a088c4f814dbac54697120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleTexts:
+  - 'Pending Approval '
+  - Still in Draft
+  - On Hold
+  - Awaiting Review
+  - Coming Soon
+  - Scheduled Later
+  - Under Construction
+  - Not Ready
+  - In Progress
+  - Stay Tuned
+  - Missed Deadline
+  - Ran Out of Time
+  - Overdue Task
+  - Delayed Delivery
+  - Oops, Not Yet
+  - Behind Schedule
+  - Missed the Mark
+  - Pushed to Tomorrow
+  - Deadline Who?
+  - Oops, My Bad
 --- !u!1 &75374020
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +797,7 @@ GameObject:
   - component: {fileID: 276710979}
   - component: {fileID: 276710981}
   - component: {fileID: 276710980}
+  - component: {fileID: 276710982}
   m_Layer: 5
   m_Name: Unavailable
   m_TagString: Untagged
@@ -888,6 +923,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276710978}
   m_CullTransparentMesh: 1
+--- !u!114 &276710982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276710978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374edd11c9a088c4f814dbac54697120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleTexts:
+  - 'Pending Approval '
+  - Still in Draft
+  - On Hold
+  - Awaiting Review
+  - Coming Soon
+  - Scheduled Later
+  - Under Construction
+  - Not Ready
+  - In Progress
+  - Stay Tuned
+  - Missed Deadline
+  - Ran Out of Time
+  - Overdue Task
+  - Delayed Delivery
+  - Oops, Not Yet
+  - Behind Schedule
+  - Missed the Mark
+  - Pushed to Tomorrow
+  - Deadline Who?
+  - Oops, My Bad
 --- !u!1 &280082932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &288864646
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2014,6 +2082,7 @@ GameObject:
   - component: {fileID: 707358446}
   - component: {fileID: 707358448}
   - component: {fileID: 707358447}
+  - component: {fileID: 707358449}
   m_Layer: 5
   m_Name: Unavailable
   m_TagString: Untagged
@@ -2139,6 +2208,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707358445}
   m_CullTransparentMesh: 1
+--- !u!114 &707358449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707358445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 374edd11c9a088c4f814dbac54697120, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  possibleTexts:
+  - 'Pending Approval '
+  - Still in Draft
+  - On Hold
+  - Awaiting Review
+  - Coming Soon
+  - Scheduled Later
+  - Under Construction
+  - Not Ready
+  - In Progress
+  - Stay Tuned
+  - Missed Deadline
+  - Ran Out of Time
+  - Overdue Task
+  - Delayed Delivery
+  - Oops, Not Yet
+  - Behind Schedule
+  - Missed the Mark
+  - Pushed to Tomorrow
+  - Deadline Who?
+  - Oops, My Bad
 --- !u!1001 &758545213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2234,6 +2336,10 @@ PrefabInstance:
     - target: {fileID: 6289179446701498990, guid: 8d05e9ff8c3d5de40a7c26c4b8806a74, type: 3}
       propertyPath: m_Name
       value: Logo Animation Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289179446701498990, guid: 8d05e9ff8c3d5de40a7c26c4b8806a74, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2402,7 +2508,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832823539}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -2458,7 +2564,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832823539}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2951,7 +3057,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1047828679
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3356,7 +3462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1216836029
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3727,7 +3833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1378841283
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4006,7 +4112,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528252692}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -4062,7 +4168,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528252692}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -4207,7 +4313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1569823010
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4350,7 +4456,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613374790}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -4406,7 +4512,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613374790}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -4476,7 +4582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1657683698
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4643,7 +4749,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690483760}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -4699,7 +4805,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690483760}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -5219,7 +5325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1904476531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5412,7 +5518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2085157314
 RectTransform:
   m_ObjectHideFlags: 0
