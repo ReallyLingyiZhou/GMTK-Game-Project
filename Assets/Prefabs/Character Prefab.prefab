@@ -543,10 +543,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6561411829366314792, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6561411829366314792, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2be27a4337314ba4ab941fd765b15af9, type: 2}
+    - target: {fileID: -6561411829366314792, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65a2168877dc69e4b9e494d118001f8b, type: 2}
+    - target: {fileID: -2803120968148793808, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2803120968148793808, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 56112736819d32f4c9a4933a8c490583, type: 2}
+    - target: {fileID: -2803120968148793808, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 65a2168877dc69e4b9e494d118001f8b, type: 2}
+    - target: {fileID: -301024944411435851, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -301024944411435851, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 25b85376512bd16488d76a6aeeabe820, type: 2}
+      objectReference: {fileID: 2100000, guid: 480fd50ff4b387f41bcae138174d2b88, type: 2}
+    - target: {fileID: -301024944411435851, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 187835256ace78744b4e2760ea66a004, type: 2}
     - target: {fileID: 919132149155446097, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
       propertyPath: m_Name
       value: Rigged Character
@@ -595,7 +627,7 @@ PrefabInstance:
       addedObject: {fileID: 3140232503254036318}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1533077636159819521}
+      addedObject: {fileID: 8948866212690115817}
   m_SourcePrefab: {fileID: 100100000, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}
 --- !u!4 &19275647117766738 stripped
 Transform:
@@ -666,7 +698,7 @@ CharacterController:
   serializedVersion: 3
   m_Height: 1.8
   m_Radius: 0.51
-  m_SlopeLimit: 45
+  m_SlopeLimit: 0
   m_StepOffset: 0.25
   m_SkinWidth: 0.02
   m_MinMoveDistance: 0
@@ -714,22 +746,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 30
-  SprintSpeed: 120
+  SprintSpeed: 60
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
   FootstepAudioClips:
-  - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
-  - {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
-  - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
-  - {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
-  - {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
-  - {fileID: 8300000, guid: 29841e7d5bbfb5b419c9ad16ca8bc4c1, type: 3}
-  - {fileID: 8300000, guid: dd1af302b8902684d9381de1f2d3a5af, type: 3}
-  - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
-  - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
-  - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
-  FootstepAudioVolume: 0.3
+  - {fileID: 8300000, guid: 1a148114ede75d04eae0ea1b5895a8fd, type: 3}
+  - {fileID: 8300000, guid: 2fd19b3855c5705498d714f112877a67, type: 3}
+  - {fileID: 8300000, guid: 0f82978fb43575a44928fe57c231d0ad, type: 3}
+  - {fileID: 8300000, guid: d83677a2dfa88da46b88beb4d6800666, type: 3}
+  - {fileID: 8300000, guid: 817e53df4eb0f8b4197af1d9579ea688, type: 3}
+  - {fileID: 8300000, guid: 591aa6207986b8a47a41ebfafcb29945, type: 3}
+  - {fileID: 8300000, guid: caaedc42a81f28d4890713076c87d9c0, type: 3}
+  - {fileID: 8300000, guid: 874b5cb61a830e947bfe142d23c31efc, type: 3}
+  - {fileID: 8300000, guid: 18c5464e3f49add42919961787602af2, type: 3}
+  FootstepAudioVolume: 1
   JumpHeight: 0.2
   Gravity: -15
   JumpTimeout: 0.3
@@ -781,33 +812,14 @@ MonoBehaviour:
     m_Bits: 4294967295
   canPush: 1
   strength: 1
---- !u!54 &1533077636159819521
-Rigidbody:
+--- !u!81 &8948866212690115817
+AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3804280805738619957}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 32
-  m_CollisionDetection: 0
+  m_Enabled: 1
 --- !u!4 &4575751299333848719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ffa8dce0cb587b348bd496fa074f2171, type: 3}

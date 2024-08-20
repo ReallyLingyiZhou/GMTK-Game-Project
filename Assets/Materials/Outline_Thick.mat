@@ -146,7 +146,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     - __dirty: 0
-    - _scale: 0.015
+    - _scale: 0.02
     m_Colors:
     - _ASEOutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
