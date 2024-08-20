@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,13 +9,12 @@ public class FinishPoint : MonoBehaviour
     //     SceneManager.LoadSceneAsync(0);
     //     UnlockNewLevel();
     // }
-    private void OnCollisionEnter(Collision collision)
+    public EndMenu endMenu;
+    public TaskTracker taskTracker;
+    void OnTriggerEnter(Collider collision)
     {
-        // if (collision.gameObject.tag == "Player")
-        // {
-        SceneManager.LoadSceneAsync(0);
         UnlockNewLevel();
-        // }
+        endMenu.OpenEndMenu(taskTracker.GetAllTaskSummery());
     }
     void UnlockNewLevel()
     {
@@ -28,7 +28,7 @@ public class FinishPoint : MonoBehaviour
 
     public void tool_goToNextLevel()
     {
-        SceneManager.LoadSceneAsync(0);
+        endMenu.GameObject().SetActive(true);
         UnlockNewLevel();
     }
 }

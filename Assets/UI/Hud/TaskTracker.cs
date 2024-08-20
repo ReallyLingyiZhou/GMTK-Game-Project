@@ -1,10 +1,20 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TaskTracker : MonoBehaviour
 {
     [SerializeField] private List<SpawnStrikethrough> strikethroughs;
-    [SerializeField] private bool AllDone = false;
+    public TaskSummery GetAllTaskSummery()
+    {
+        return new TaskSummery()
+        {
+            time = Time.timeSinceLevelLoad,
+            ObjectivesCompletedCount = CompletedCount,
+            ObjectivesDestroyedCount = strikethroughs.Count() - CompletedCount,
+            DestroyedCount = DestroyedCount
+        };
+    }
     [SerializeField] private int CompletedCount = 0;
     [SerializeField] private int DestroyedCount = 0;
 
@@ -34,7 +44,8 @@ public class TaskTracker : MonoBehaviour
     //     matched.TryDeactivate();
     // }
 
-    public void completeObjective(int index){
+    public void completeObjective(int index)
+    {
         strikethroughs[index].taskFinished = true;
         strikethroughs[index].Spawn();
     }
