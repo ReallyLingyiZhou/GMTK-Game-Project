@@ -125,7 +125,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7066424481918879702}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac1332329e1691a4894110920158b7c0, type: 3}
   m_Name: 
@@ -137,10 +137,11 @@ MonoBehaviour:
   - Player
   tracker: {fileID: 0}
   destructionSounds:
-  - {fileID: 8300000, guid: 265e877f852777a4fad2429c278a0b2d, type: 3}
-  - {fileID: 8300000, guid: 31a3964438d7e854bba8c5728da07ad6, type: 3}
-  - {fileID: 8300000, guid: 3f5f078863d1f3d41b20220dc92bd177, type: 3}
-  - {fileID: 8300000, guid: 2f13c9f9840fddd41a97ab0138416a45, type: 3}
+  - {fileID: 8300000, guid: 2cce147903157c149afa96e643fbcb81, type: 3}
+  - {fileID: 8300000, guid: 973f9b93fbc191843a6d84392aa787a0, type: 3}
+  - {fileID: 8300000, guid: 625c693236df4bd4e90f437497fdd1cd, type: 3}
+  - {fileID: 8300000, guid: a4cef7baa1c6aeb4099c77d535b02f14, type: 3}
+  - {fileID: 8300000, guid: 71f3222b43b002c42a56f7e2d8ef6f10, type: 3}
 --- !u!65 &7620919803564370275
 BoxCollider:
   m_ObjectHideFlags: 0

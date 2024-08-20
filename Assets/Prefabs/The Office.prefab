@@ -371,7 +371,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8584f4a1b5d342b4cba7f384b59a235d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: de0d90ddda5fccc4186d6ecfca8172d3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1096,6 +1096,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (2)
@@ -1352,6 +1356,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (16)
@@ -1792,6 +1800,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk
@@ -2314,6 +2326,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (14)
@@ -2384,6 +2400,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (15)
@@ -2816,6 +2836,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (7)
@@ -3154,6 +3178,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (4)
@@ -3348,6 +3376,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (9)
@@ -3604,6 +3636,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (6)
@@ -3674,6 +3710,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (8)
@@ -4652,6 +4692,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (1)
@@ -4862,6 +4906,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (10)
@@ -5204,6 +5252,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (3)
@@ -5612,6 +5664,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (12)
@@ -6082,6 +6138,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (13)
@@ -6222,6 +6282,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (5)

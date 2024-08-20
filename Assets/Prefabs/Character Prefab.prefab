@@ -297,6 +297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3DCursors
       objectReference: {fileID: 0}
+    - target: {fileID: 2686418467930183958, guid: f2c383ad24dc41a42a629afd3c4e0f24, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3395394476875206050, guid: f2c383ad24dc41a42a629afd3c4e0f24, type: 3}
       propertyPath: holdingPoint
       value: 
@@ -312,6 +316,10 @@ PrefabInstance:
     - target: {fileID: 4384113666500267307, guid: f2c383ad24dc41a42a629afd3c4e0f24, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 4541115648007238952, guid: f2c383ad24dc41a42a629afd3c4e0f24, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4762893441779211183, guid: f2c383ad24dc41a42a629afd3c4e0f24, type: 3}
       propertyPath: holdingPoint
