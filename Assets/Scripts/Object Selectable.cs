@@ -29,11 +29,11 @@ public class ObjectSelectable : MonoBehaviour
     {
        
         defaultColor = GetComponent<Renderer>().material.GetColor("_Color0");
-        if(cursor3D == null){
-            cursor3D = GameObject.Find("RightHandCursor").transform;
-        }
+        // if(cursor3D == null){
+        //     cursor3D = GameObject.Find("RightHandCursor").transform;
+        // }
 
-        cursorScript = cursor3D.GetComponent<Cursor3D>();
+        // cursorScript = cursor3D.GetComponent<Cursor3D>();
     }
 
     public void tool_hoverEnter(){
