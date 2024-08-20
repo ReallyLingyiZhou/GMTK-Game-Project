@@ -44,7 +44,7 @@ public class Cursor3D : MonoBehaviour
         }
 
         //when ctrl is down
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(Crouch());
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class LV0_ControlKey : MonoBehaviour
 {
 
- public int taskIndex = 0;
+    public int taskIndex = 0;
 
     public bool taskFinished = false;
     public TaskTracker taskTracker;
@@ -23,7 +23,7 @@ public class LV0_ControlKey : MonoBehaviour
     void Update()
     {
         //lif eft control key released
-        if (Input.GetKeyUp(KeyCode.LeftControl))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             if (!taskFinished)
             {
