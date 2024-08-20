@@ -70,6 +70,7 @@ public class ObjectSelectable : MonoBehaviour
         //enable rigidbody
         GetComponent<Rigidbody>().isKinematic = false;
         this.transform.parent = null;
+        GetComponent<Renderer>().material.SetColor("_Color0", defaultColor);
     }   
 
     // Update is called once per frame

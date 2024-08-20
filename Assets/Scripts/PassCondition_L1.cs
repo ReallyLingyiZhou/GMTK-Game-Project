@@ -46,7 +46,7 @@ public class PassCondition_L1 : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("Collision with " + other.gameObject.name);
+        // Debug.Log("Collision with " + other.gameObject.name);
         if(other.gameObject.name == goalName){
             itemPlaced = true;
         }
