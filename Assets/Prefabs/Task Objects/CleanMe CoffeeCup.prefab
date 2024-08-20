@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -759.8222
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -459.88855
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.0359857
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
       propertyPath: m_LocalRotation.w
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
       propertyPath: m_LocalRotation.y
@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -96,6 +100,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5587037174142307749}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 199044073929461246}
   m_SourcePrefab: {fileID: 100100000, guid: ee822dc0a7ef234439dfd6113a4b77af, type: 3}
 --- !u!1 &4197242617193429227 stripped
 GameObject:
@@ -120,6 +127,7 @@ MonoBehaviour:
   ImmunityTags:
   - Player
   tracker: {fileID: 0}
+  destructionSounds: []
 --- !u!54 &7871996437920285194
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -188,3 +196,25 @@ MonoBehaviour:
   cursorScript: {fileID: 0}
   holdingPoint: {fileID: 0}
   offset: {x: 0, y: 0, z: 0}
+--- !u!114 &199044073929461246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4197242617193429227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66704ccdeef4304429d681e9d109978b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPlaced: 0
+  itemDropped: 0
+  itemStay: 0
+  levelEndingUI: {fileID: 0}
+  inGameHud: {fileID: 0}
+  taskTracker: {fileID: 0}
+  passCondition_Destroy: 1
+  taskIndex: 4
+  goalName: Task TrashBin
+  goalBaseName: Goal Base
