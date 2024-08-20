@@ -1,13 +1,7 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO.Compression;
 using System.Linq;
-using Unity.VisualScripting;
-using UnityEditor.DeviceSimulation;
 using UnityEngine;
 
-//CREATED By ditzel
 public class MeshDestroy : MonoBehaviour
 {
     private bool edgeSet = false;
@@ -21,16 +15,17 @@ public class MeshDestroy : MonoBehaviour
     public List<string> ImmunityTags = new List<string>() { "Player" };
     [SerializeField] TaskTracker tracker;
 
-    // Start is called before the first frame update
+    // Sound effect variables
+    public List<AudioClip> destructionSounds;
+
     void Start()
     {
-
+        // You can initialize anything if needed in Start
     }
 
-    // Update is called once per frame
     void Update()
     {
-
+        // You can update anything if needed in Update
     }
 
     void OnCollisionEnter(Collision collision)
@@ -39,31 +34,6 @@ public class MeshDestroy : MonoBehaviour
         if (!ImmunityTags.Any(tag => tag == colliderTag) && collision.impulse.magnitude > ImpulseThreshold)
             DestroyMesh();
     }
-
-    private static List<(float x, float y, float z)> GetMidpoints(
-        (float x, float y, float z) p1,
-        (float x, float y, float z) p2,
-        int midpoints = 1)
-    {
-        if (midpoints < 1)
-            return new();
-
-        List<(float x, float y, float z)> list = new();
-        var denominator = midpoints + 1;
-
-        for (int i = 1; i < denominator; i++)
-        {
-            var p1Weight = i;
-            var p2Weight = denominator - i;
-            list.Add((
-                (p1Weight * p1.x + p2Weight * p2.x) / denominator,
-                (p1Weight * p1.y + p2Weight * p2.y) / denominator,
-                (p1Weight * p1.z + p2Weight * p2.z) / denominator));
-        }
-
-        return list;
-    }
-
 
     private void DestroyMesh()
     {
@@ -101,7 +71,6 @@ public class MeshDestroy : MonoBehaviour
                                                                                    UnityEngine.Random.Range(midpoints.First().y, midpoints.Last().y),
                                                                                    UnityEngine.Random.Range(midpoints.First().z, midpoints.Last().z)));
 
-
                 subParts.Add(GenerateMesh(parts[i], plane, true));
                 subParts.Add(GenerateMesh(parts[i], plane, false));
             }
@@ -119,6 +88,14 @@ public class MeshDestroy : MonoBehaviour
         }
         finally
         {
+            // Play a random destruction sound before destroying the object
+            if (destructionSounds != null && destructionSounds.Count > 0)
+            {
+                AudioClip randomClip = destructionSounds[Random.Range(0, destructionSounds.Count)];
+                AudioSource.PlayClipAtPoint(randomClip, transform.position);
+            }
+
+            // Destroy the object after playing the sound
             try
             {
                 // tracker.Destroy(gameObject);
@@ -128,7 +105,30 @@ public class MeshDestroy : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
 
+    private static List<(float x, float y, float z)> GetMidpoints(
+        (float x, float y, float z) p1,
+        (float x, float y, float z) p2,
+        int midpoints = 1)
+    {
+        if (midpoints < 1)
+            return new();
+
+        List<(float x, float y, float z)> list = new();
+        var denominator = midpoints + 1;
+
+        for (int i = 1; i < denominator; i++)
+        {
+            var p1Weight = i;
+            var p2Weight = denominator - i;
+            list.Add((
+                (p1Weight * p1.x + p2Weight * p2.x) / denominator,
+                (p1Weight * p1.y + p2Weight * p2.y) / denominator,
+                (p1Weight * p1.z + p2Weight * p2.z) / denominator));
+        }
+
+        return list;
     }
 
     private PartMesh GenerateMesh(PartMesh original, Plane plane, bool left)
@@ -136,7 +136,6 @@ public class MeshDestroy : MonoBehaviour
         var partMesh = new PartMesh() { };
         var ray1 = new Ray();
         var ray2 = new Ray();
-
 
         for (var i = 0; i < original.Triangles.Length; i++)
         {
@@ -180,7 +179,7 @@ public class MeshDestroy : MonoBehaviour
                 plane.Raycast(ray2, out var enter2);
                 var lerp2 = enter2 / dir2.magnitude;
 
-                //first vertex = ancor
+                //first vertex = anchor
                 AddEdge(i,
                         partMesh,
                         left ? plane.normal * -1f : plane.normal,
@@ -193,8 +192,6 @@ public class MeshDestroy : MonoBehaviour
                 {
                     partMesh.AddTriangle(i,
                                         original.Vertices[triangles[j + singleIndex]],
-                                        //Vector3.Lerp(originalMesh.vertices[triangles[j + singleIndex]], originalMesh.vertices[triangles[j + ((singleIndex + 1) % 3)]], lerp1),
-                                        //Vector3.Lerp(originalMesh.vertices[triangles[j + singleIndex]], originalMesh.vertices[triangles[j + ((singleIndex + 2) % 3)]], lerp2),
                                         ray1.origin + ray1.direction.normalized * enter1,
                                         ray2.origin + ray2.direction.normalized * enter2,
                                         original.Normals[triangles[j + singleIndex]],
@@ -231,8 +228,6 @@ public class MeshDestroy : MonoBehaviour
                                         Vector2.Lerp(original.UV[triangles[j + singleIndex]], original.UV[triangles[j + ((singleIndex + 2) % 3)]], lerp2));
                     continue;
                 }
-
-
             }
         }
 
@@ -347,11 +342,6 @@ public class MeshDestroy : MonoBehaviour
             collider.convex = true;
 
             var rigidbody = GameObject.AddComponent<Rigidbody>();
-            // var meshDestroy = GameObject.AddComponent<MeshDestroy>();
-            // meshDestroy.CutCascades = original.CutCascades;
-            // meshDestroy.ExplodeForce = original.ExplodeForce;
-
         }
-
     }
 }

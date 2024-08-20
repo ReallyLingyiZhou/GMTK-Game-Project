@@ -136,6 +136,10 @@ MonoBehaviour:
   ImmunityTags:
   - Player
   tracker: {fileID: 0}
+  destructionSounds:
+  - {fileID: 8300000, guid: 213237de1135e0b46870d200d98597e6, type: 3}
+  - {fileID: 8300000, guid: 265e877f852777a4fad2429c278a0b2d, type: 3}
+  - {fileID: 8300000, guid: e58edcb75788011409b7b83c86de67b6, type: 3}
 --- !u!65 &7620919803564370275
 BoxCollider:
   m_ObjectHideFlags: 0
