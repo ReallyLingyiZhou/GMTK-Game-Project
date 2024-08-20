@@ -301,10 +301,18 @@ PrefabInstance:
       propertyPath: holdingPoint
       value: 
       objectReference: {fileID: 1440085974460233933}
+    - target: {fileID: 3395394476875206050, guid: f2c383ad24dc41a42a629afd3c4e0f24, type: 3}
+      propertyPath: reachDownAnimationDurationInSecond
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4762893441779211183, guid: f2c383ad24dc41a42a629afd3c4e0f24, type: 3}
       propertyPath: holdingPoint
       value: 
       objectReference: {fileID: 6469370683763639253}
+    - target: {fileID: 4762893441779211183, guid: f2c383ad24dc41a42a629afd3c4e0f24, type: 3}
+      propertyPath: reachDownAnimationDurationInSecond
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 9038554289386698793, guid: f2c383ad24dc41a42a629afd3c4e0f24, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

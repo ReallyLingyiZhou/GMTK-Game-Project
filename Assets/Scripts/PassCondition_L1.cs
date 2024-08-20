@@ -17,7 +17,11 @@ public class PassCondition_L1 : MonoBehaviour
     public GameObject levelEndingUI;
     public InGameHud inGameHud;
     public TaskTracker taskTracker;
-    
+    public bool passCondition_Destroy = false; 
+    public int taskIndex = 0; 
+
+    public string goalName = "Goal";
+    public string goalBaseName = "Goal Base";
     // Start is called before the first frame update
     void Start()
     {
@@ -42,32 +46,37 @@ public class PassCondition_L1 : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.name == "Goal"){
+        Debug.Log("Collision with " + other.gameObject.name);
+        if(other.gameObject.name == goalName){
             itemPlaced = true;
         }
-        if(other.gameObject.name == "Goal Base"){
-            itemStay = true;
-            if(itemDropped && itemPlaced){
-                levelEndingScenee();
-            }
+        if(other.gameObject.name == goalBaseName){
+            levelEndingScenee();
+            // itemStay = true;
+            // if(itemPlaced){
+                
+            // }
         }
     }
 
     private void OnTriggerExit(Collider other) {
-        if(other.gameObject.name == "Goal"){
+        if(other.gameObject.name == goalName){
             itemPlaced = false;
         }
-        if(other.gameObject.name == "Goal Base"){
+        if(other.gameObject.name == goalBaseName){
             itemStay = false;
         }
     }
 
     public void levelEndingScenee(){
         inGameHud.showHud();
-        taskTracker.completeObjective(0);
-        taskTracker.completeObjective(1);
-        taskTracker.completeObjective(2);
-        taskTracker.completeObjective(3);
+        taskTracker.completeObjective(taskIndex - 1 );
+    }
+
+    private void OnDestroy() {
+        if(passCondition_Destroy){
+            levelEndingScenee();
+        }
     }
 
     
