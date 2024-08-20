@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CutCascades: 1
   ExplodeForce: 250
-  ImpulseThreshold: 10
+  ImpulseThreshold: 3
   ImmunityTags:
   - Player
   tracker: {fileID: 0}

@@ -37,6 +37,35 @@ public class MeshDestroy : MonoBehaviour
 
     private void DestroyMesh()
     {
+        // Check for child objects and handle unparenting and rigidbody adjustment
+        if (transform.childCount > 0)
+        {
+            foreach (Transform child in transform)
+            {
+                child.parent = null; // Unparent the child
+
+                // Handle Rigidbody component
+                Rigidbody childRigidbody = child.GetComponent<Rigidbody>();
+                if (childRigidbody != null)
+                {
+                    childRigidbody.isKinematic = false; // Set isKinematic to false
+                }
+                else
+                {
+                    // Add a Rigidbody component if it doesn't have one
+                    childRigidbody = child.gameObject.AddComponent<Rigidbody>();
+                    childRigidbody.isKinematic = false;
+                }
+
+                // Handle MeshCollider component
+                MeshCollider childCollider = child.GetComponent<MeshCollider>();
+                if (childCollider != null)
+                {
+                    childCollider.isTrigger = false; // Set isTrigger to false
+                }
+            }
+        }
+
         var originalMesh = GetComponent<MeshFilter>().mesh;
         originalMesh.RecalculateBounds();
         var parts = new List<PartMesh>();

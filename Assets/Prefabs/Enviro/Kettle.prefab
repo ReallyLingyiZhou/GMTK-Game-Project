@@ -128,9 +128,14 @@ MonoBehaviour:
   - Player
   tracker: {fileID: 0}
   destructionSounds:
-  - {fileID: 8300000, guid: 213237de1135e0b46870d200d98597e6, type: 3}
-  - {fileID: 8300000, guid: 61240589c135f524f9df6840bf13ba6d, type: 3}
-  - {fileID: 8300000, guid: 4892151dbb6497c4b94350a63829070f, type: 3}
+  - {fileID: 8300000, guid: 8e89b151f323d2e4291587b31f38c300, type: 3}
+  - {fileID: 8300000, guid: 8c298e8479a462f4ea5070a5cba276e1, type: 3}
+  - {fileID: 8300000, guid: 90afe50c53f86e241ac8a0cd63c00eb5, type: 3}
+  - {fileID: 8300000, guid: ec2817b349a23584aa2ee229072396b9, type: 3}
+  - {fileID: 8300000, guid: 76aa703bb2b6adf4386ef7006096de1a, type: 3}
+  - {fileID: 8300000, guid: ec2817b349a23584aa2ee229072396b9, type: 3}
+  - {fileID: 8300000, guid: 8d8597aac2beff04690025671614936a, type: 3}
+  - {fileID: 8300000, guid: 1bc1f51b745a41a459e73eaeb40f2ed4, type: 3}
 --- !u!54 &7758954454260738854
 Rigidbody:
   m_ObjectHideFlags: 0

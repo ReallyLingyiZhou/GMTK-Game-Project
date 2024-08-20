@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 7893132596635625596}
   - component: {fileID: 6268428801369443209}
   - component: {fileID: 4040284514194501677}
-  - component: {fileID: 4981274522866706855}
-  - component: {fileID: 1070992493921928443}
   - component: {fileID: 1420428262058011451}
+  - component: {fileID: 7010377666705290499}
+  - component: {fileID: 9005763199683744009}
   m_Layer: 0
-  m_Name: Wall
+  m_Name: Small Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.75, z: 0}
-  m_LocalScale: {x: 0.99, y: 1.5, z: 0.1}
+  m_LocalScale: {x: 6.3232884, y: 6.4205565, z: 8.2478}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564171951691525419}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4068373912626513877, guid: e26074cc05b7ee7459da85b7127c19b7, type: 3}
 --- !u!23 &4040284514194501677
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -64,8 +64,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 61f54a1ecc0cbe141b29e5d7e7a0d402, type: 2}
-  - {fileID: 2100000, guid: 65a2168877dc69e4b9e494d118001f8b, type: 2}
+  - {fileID: 2100000, guid: 96196837095d03a45b7a740628a51931, type: 2}
+  - {fileID: 2100000, guid: 76195f270d81b214bae6f116669173a6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,46 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4981274522866706855
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564171951691525419}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1070992493921928443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564171951691525419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac1332329e1691a4894110920158b7c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CutCascades: 1
-  ExplodeForce: 250
-  ImpulseThreshold: 10
-  ImmunityTags:
-  - Player
-  tracker: {fileID: 0}
-  destructionSounds: []
 --- !u!54 &1420428262058011451
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,3 +114,46 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7010377666705290499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564171951691525419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1332329e1691a4894110920158b7c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CutCascades: 1
+  ExplodeForce: 250
+  ImpulseThreshold: 3
+  ImmunityTags:
+  - Player
+  tracker: {fileID: 0}
+  destructionSounds:
+  - {fileID: 8300000, guid: 2f13c9f9840fddd41a97ab0138416a45, type: 3}
+  - {fileID: 8300000, guid: 9985a9cc07ee920469db937c5b82fa83, type: 3}
+  - {fileID: 8300000, guid: 5f3f766451184be43adab1f69b982b17, type: 3}
+--- !u!65 &9005763199683744009
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564171951691525419}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15518008, y: 0.23277014, z: 0.015518011}
+  m_Center: {x: 0, y: 0, z: 0}

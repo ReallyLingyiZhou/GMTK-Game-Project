@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 4981274522866706855}
   - component: {fileID: 1070992493921928443}
   - component: {fileID: 1420428262058011451}
+  - component: {fileID: 2617230411367720876}
   m_Layer: 0
-  m_Name: Cubical Wall
+  m_Name: Big Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,6 +127,10 @@ MonoBehaviour:
   ImmunityTags:
   - Player
   tracker: {fileID: 0}
+  destructionSounds:
+  - {fileID: 8300000, guid: 2f13c9f9840fddd41a97ab0138416a45, type: 3}
+  - {fileID: 8300000, guid: 9985a9cc07ee920469db937c5b82fa83, type: 3}
+  - {fileID: 8300000, guid: 5f3f766451184be43adab1f69b982b17, type: 3}
 --- !u!54 &1420428262058011451
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,7 +139,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564171951691525419}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -151,5 +156,29 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &2617230411367720876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564171951691525419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1332329e1691a4894110920158b7c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CutCascades: 1
+  ExplodeForce: 250
+  ImpulseThreshold: 10
+  ImmunityTags:
+  - Player
+  tracker: {fileID: 0}
+  destructionSounds:
+  - {fileID: 8300000, guid: 265e877f852777a4fad2429c278a0b2d, type: 3}
+  - {fileID: 8300000, guid: 31a3964438d7e854bba8c5728da07ad6, type: 3}
+  - {fileID: 8300000, guid: 3f5f078863d1f3d41b20220dc92bd177, type: 3}
+  - {fileID: 8300000, guid: 2f13c9f9840fddd41a97ab0138416a45, type: 3}
+  - {fileID: 8300000, guid: 04c1f0fdf9e8f2540940a7d4119d18c8, type: 3}

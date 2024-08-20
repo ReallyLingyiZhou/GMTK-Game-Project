@@ -75,6 +75,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b7ac9dfa3e3e71d49983014435354b64, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7339750271349576833}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b7ac9dfa3e3e71d49983014435354b64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7546604920542889567}
   m_SourcePrefab: {fileID: 100100000, guid: b7ac9dfa3e3e71d49983014435354b64, type: 3}
 --- !u!1 &1227855347899816044 stripped
 GameObject:
@@ -103,3 +106,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2978463717061639436, guid: b7ac9dfa3e3e71d49983014435354b64, type: 3}
+--- !u!114 &7546604920542889567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227855347899816044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1332329e1691a4894110920158b7c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CutCascades: 1
+  ExplodeForce: 250
+  ImpulseThreshold: 10
+  ImmunityTags:
+  - Player
+  tracker: {fileID: 0}
+  destructionSounds: []

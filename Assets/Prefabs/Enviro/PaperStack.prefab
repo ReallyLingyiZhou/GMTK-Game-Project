@@ -149,7 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CutCascades: 1
   ExplodeForce: 250
-  ImpulseThreshold: 10
+  ImpulseThreshold: 1
   ImmunityTags:
   - Player
   tracker: {fileID: 0}
+  destructionSounds:
+  - {fileID: 8300000, guid: 16bf500211891e04b93600c8670791bc, type: 3}
