@@ -335,7 +335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Deliver mail to the office
+  m_text: Get this coffee out of my sight
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: da1c5de26e499dd409768a8c48bdcac0, type: 2}
   m_sharedMaterial: {fileID: 9078879384966033754, guid: da1c5de26e499dd409768a8c48bdcac0, type: 2}
@@ -784,6 +784,10 @@ PrefabInstance:
     - target: {fileID: 1083357772926696769, guid: b762a418e7997364d855b5a2c048101b, type: 3}
       propertyPath: m_CellSize.y
       value: 48.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1085030995268075264, guid: b762a418e7997364d855b5a2c048101b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2389242039167546017, guid: b762a418e7997364d855b5a2c048101b, type: 3}
       propertyPath: RandomFlips

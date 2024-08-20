@@ -20,6 +20,9 @@ public class SpawnStrikethrough : MonoBehaviour
     public int currentStrike = 0;
     public bool taskFinished = false; 
 
+    public float xOffset = 0f; 
+    public float yOffset = 0f; 
+
     void Start()
     {
         // Spawn();
@@ -45,7 +48,7 @@ public class SpawnStrikethrough : MonoBehaviour
         image.transform.localRotation = Quaternion.Euler(0, 0, curRotation.z + Random.Range(MinZRotation, MaxZRotation));
         textMeshPro.color = Color;
         //set rect transform posx to 118f
-        image.rectTransform.localPosition = new Vector3(0, Random.Range(-15, 15), 0);
+        image.rectTransform.localPosition = new Vector3(xOffset, yOffset , 0);
         
         currentStrike++;
 
