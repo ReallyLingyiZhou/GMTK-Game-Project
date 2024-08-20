@@ -486,33 +486,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2783605748933190063, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 2783605748933190063, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3412175976598551861, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4623630578462516664, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4684492259666507932, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.98
-      objectReference: {fileID: 0}
     - target: {fileID: 4811313318427177588, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
       propertyPath: m_Name
       value: Character Prefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 4919959335587796523, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
-      propertyPath: animationTimeDuration
-      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 4959163267901945746, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
       propertyPath: m_LocalPosition.x

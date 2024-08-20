@@ -62,7 +62,7 @@ public class ObjectSelectable : MonoBehaviour
     }
 
     public void tool_deselected(){
-
+        Debug.Log("deselected");
         isGrabbed = false;
         offset = Vector3.zero;
         //enable collider
