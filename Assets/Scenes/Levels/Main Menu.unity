@@ -2286,6 +2286,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5322233932649003049, guid: 8d05e9ff8c3d5de40a7c26c4b8806a74, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322233932649003049, guid: 8d05e9ff8c3d5de40a7c26c4b8806a74, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322233932649003049, guid: 8d05e9ff8c3d5de40a7c26c4b8806a74, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322233932649003049, guid: 8d05e9ff8c3d5de40a7c26c4b8806a74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -3771,7 +3783,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1293484222
 RectTransform:
@@ -5643,7 +5655,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 388492169}
   - {fileID: 280082934}
+  - {fileID: 758545213}
   - {fileID: 1293484222}
   - {fileID: 75374023}
   - {fileID: 1736320343}
-  - {fileID: 758545213}
