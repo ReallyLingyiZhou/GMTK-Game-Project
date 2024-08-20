@@ -241,6 +241,7 @@ MonoBehaviour:
   ImmunityTags:
   - Player
   tracker: {fileID: 0}
+  destructionSounds: []
 --- !u!1 &3759243019501002753 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1317800422075651692, guid: c5c48ed01bf00d948a95a46af8f7badd, type: 3}
@@ -312,6 +313,7 @@ MonoBehaviour:
   ImmunityTags:
   - Player
   tracker: {fileID: 0}
+  destructionSounds: []
 --- !u!1 &5861097543561663937 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8589642336906830764, guid: c5c48ed01bf00d948a95a46af8f7badd, type: 3}
@@ -383,6 +385,7 @@ MonoBehaviour:
   ImmunityTags:
   - Player
   tracker: {fileID: 0}
+  destructionSounds: []
 --- !u!1 &7341179089243916762 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4864833620444741553, guid: c5c48ed01bf00d948a95a46af8f7badd, type: 3}
@@ -433,7 +436,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -455,6 +458,7 @@ MonoBehaviour:
   ImmunityTags:
   - Player
   tracker: {fileID: 0}
+  destructionSounds: []
 --- !u!1 &7879660410601221619 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3803172792836514918, guid: c5c48ed01bf00d948a95a46af8f7badd, type: 3}
@@ -526,3 +530,4 @@ MonoBehaviour:
   ImmunityTags:
   - Player
   tracker: {fileID: 0}
+  destructionSounds: []
