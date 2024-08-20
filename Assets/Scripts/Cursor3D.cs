@@ -72,16 +72,16 @@ public class Cursor3D : MonoBehaviour
 
     public void toggleObjectSelection()
     {
-        Debug.Log("Toggle Object Selection");
+        // Debug.Log("Toggle Object Selection");
         if (objectGrabbed == null)
         {
             grabObject();
-            Debug.Log("Grab Object");
+            // Debug.Log("Grab Object");
         }
         else
         {
             ungrabObject();
-            Debug.Log("Ungrab Object");
+            // Debug.Log("Ungrab Object");
         }
     }
 
@@ -104,7 +104,6 @@ public class Cursor3D : MonoBehaviour
         }
     }
 
-    //enable all 2 colliers and a rigidbody attached to this object
     public void enablePhysics()
     {
         Collider[] colliders = GetComponents<Collider>();
