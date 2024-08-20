@@ -21,18 +21,18 @@ public class ObjectSelectable : MonoBehaviour
     public Cursor3D cursorScript;
     public Transform holdingPoint; 
     public Vector3 offset; 
+
+    
        
     // Start is called before the first frame update
     void Start()
     {
+       
         defaultColor = GetComponent<Renderer>().material.GetColor("_Color0");
         if(cursor3D == null){
             cursor3D = GameObject.Find("RightHandCursor").transform;
         }
 
-        if(holdingPoint == null){
-            holdingPoint = GameObject.Find("Holding Point").transform;
-        }
         cursorScript = cursor3D.GetComponent<Cursor3D>();
     }
 

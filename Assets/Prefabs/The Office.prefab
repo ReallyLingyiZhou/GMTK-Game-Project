@@ -665,7 +665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7189400276293967469
 Transform:
   m_ObjectHideFlags: 0
@@ -4675,6 +4675,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5584782485377751831}
     m_Modifications:
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1676186417871325517, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      propertyPath: ImpulseThreshold
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
       propertyPath: m_Name
       value: Desk (11)
@@ -4730,13 +4738,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6935984377598957843}
   m_SourcePrefab: {fileID: 100100000, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
 --- !u!4 &3696068614135963314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7591708931401342316, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
   m_PrefabInstance: {fileID: 6489750690923873246}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4035439116601197576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7066424481918879702, guid: ab8a832541e717a46941bcb8e55000a6, type: 3}
+  m_PrefabInstance: {fileID: 6489750690923873246}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6935984377598957843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4035439116601197576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aecced316d02b9c4db3b99a634ae7903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffects:
+  - {fileID: 8300000, guid: 213237de1135e0b46870d200d98597e6, type: 3}
+  - {fileID: 8300000, guid: 61240589c135f524f9df6840bf13ba6d, type: 3}
+  - {fileID: 8300000, guid: 4892151dbb6497c4b94350a63829070f, type: 3}
+  volume: 1
 --- !u!1001 &6501294967415951257
 PrefabInstance:
   m_ObjectHideFlags: 0

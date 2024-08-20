@@ -10,10 +10,14 @@ public class Cursor3D : MonoBehaviour
     public float crounchVerticleOffset = 0.5f;
     public float originalZ;
     public float reachDownAnimationDurationInSecond = 0.5f;
+    public Transform holdingPoint;
+
+    
     // Start is called before the first frame update
     void Start()
     {
         originalZ = transform.position.z;
+
     }
 
     // Update is called once per frame
@@ -22,6 +26,8 @@ public class Cursor3D : MonoBehaviour
         //when E key is press
         if (Input.GetKeyDown(KeyCode.E))
         {
+
+            
             toggleObjectSelection();
         }
 
@@ -31,11 +37,19 @@ public class Cursor3D : MonoBehaviour
             ungrabObject();
         }
 
+        //Right mouse key released
+        if (Input.GetMouseButtonUp(0))
+        {
+            ungrabObject();
+        }
+
         //when ctrl is down
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             StartCoroutine(Crouch());
         }
+
+
 
         IEnumerator Crouch()
         {
@@ -90,6 +104,27 @@ public class Cursor3D : MonoBehaviour
         }
     }
 
+    //enable all 2 colliers and a rigidbody attached to this object
+    public void enablePhysics()
+    {
+        Collider[] colliders = GetComponents<Collider>();
+        foreach (Collider col in colliders)
+        {
+            col.enabled = true;
+        }
+        
+    }
+
+    //disable all 2 colliers and a rigidbody attached to this object
+    public void disablePhysics()
+    {
+        Collider[] colliders = GetComponents<Collider>();
+        foreach (Collider col in colliders)
+        {
+            col.enabled = false;
+        }
+        
+    }
 
 
 
@@ -121,7 +156,16 @@ public class Cursor3D : MonoBehaviour
         {
             return;
         }
+
+        if(obj.isGrabbed)
+        {
+            return;
+        }
         objectSelectable = obj;
+
+        objectSelectable.cursor3D = this.transform;
+        objectSelectable.cursorScript = this;
+        objectSelectable.holdingPoint = holdingPoint;
         objectSelectable.tool_hoverEnter();
 
     }
