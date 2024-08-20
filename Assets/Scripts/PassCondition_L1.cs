@@ -38,17 +38,17 @@ public class PassCondition_L1 : MonoBehaviour
         }
     }
 
-    public void levelEndingScenee()
+    public void levelEndingScenee(bool IsCompleted = true)
     {
         inGameHud.showHud();
-        taskTracker.completeObjective(taskIndex - 1);
+        taskTracker.completeObjective(taskIndex - 1, IsCompleted);
     }
 
     private void OnDestroy()
     {
         if (passCondition_Destroy)
         {
-            levelEndingScenee();
+            levelEndingScenee(false);
         }
     }
 
