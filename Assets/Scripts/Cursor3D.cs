@@ -12,6 +12,8 @@ public class Cursor3D : MonoBehaviour
     public float reachDownAnimationDurationInSecond = 0.5f;
     public Transform holdingPoint;
 
+    public 
+
     
     // Start is called before the first frame update
     void Start()
@@ -97,10 +99,12 @@ public class Cursor3D : MonoBehaviour
     }
     public void ungrabObject()
     {
+        Debug.Log("Grabbing");
         if (objectGrabbed != null)
         {
             objectGrabbed.GetComponent<ObjectSelectable>().tool_deselected();
             objectGrabbed = null;
+            objectSelectable = null;
         }
     }
 

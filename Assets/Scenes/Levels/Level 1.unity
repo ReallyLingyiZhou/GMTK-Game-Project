@@ -433,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5393725531672533772, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3986788
+      value: -1.397645
       objectReference: {fileID: 0}
     - target: {fileID: 5393725531672533772, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -441,7 +441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5577453833306847854, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3986788
+      value: -1.397645
       objectReference: {fileID: 0}
     - target: {fileID: 5577453833306847854, guid: e5bcf9df9af32bf4d97104d64b5cacc1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1665,7 +1665,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: d2682ed523bbf3f42af89209a879e100, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2206980590259467486, guid: bf6ad2d521d9b9a4c97242319e3c032d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1717,7 +1718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a617627f5e2044b1baa4bcdc70d3e6b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hoverColor: {r: 0.6855345, g: 0.43660656, b: 0.36001337, a: 1}
+  hoverColor: {r: 0.990566, g: 0.9905447, b: 0.023362402, a: 1}
   selectedColor: {r: 1, g: 0, b: 0, a: 1}
   isGrabbed: 0
   cursor3D: {fileID: 0}
