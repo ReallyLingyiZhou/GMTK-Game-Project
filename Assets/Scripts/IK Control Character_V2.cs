@@ -230,14 +230,14 @@ public class IKControlCharacter_V2 : MonoBehaviour
         {
             RightHandActive = true;
             //disable mouse cursor
-            Cursor.lockState = CursorLockMode.Locked;
+            // Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
         else if (Input.GetMouseButtonUp(1))
         {
             RightHandActive = false;
             //enable mouse cursor
-            Cursor.lockState = CursorLockMode.None;
+            // Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
 
@@ -261,14 +261,14 @@ public class IKControlCharacter_V2 : MonoBehaviour
         {
             LeftHandActive = true;
             //disable mouse cursor
-            Cursor.lockState = CursorLockMode.Locked;
+            // Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
         else if (Input.GetMouseButtonUp(0))
         {
             LeftHandActive = false;
             //enable mouse cursor
-            Cursor.lockState = CursorLockMode.None;
+            // Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
 
